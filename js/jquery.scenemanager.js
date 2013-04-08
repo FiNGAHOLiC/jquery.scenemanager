@@ -3,7 +3,7 @@
  *
  * @modified  2013/04/08
  * @requires  jQuery 1.7.x or later
- * @version   1.0.0
+ * @version   1.0.1
  * @author    FiNGAHOLiC
  * @link      https://github.com/FiNGAHOLiC/jquery.scenemanager
  * @license   The MIT License
