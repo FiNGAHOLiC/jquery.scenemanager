@@ -11,7 +11,7 @@ http://fingaholic.github.com/jquery.scenemanager/
 ### Options
 
 * **proximity** `Integer` How close to the scrollbar is to the bottom of the element (default value is 1)
-* **startSceneAt** `Integer` or `String` How far from the top of the window [pixels or percentage of the viewport's height] (default value is '50%')
+* **startSceneAt** `Integer` or `String` How far from the top of the window \[pixels or percentage of the viewport's height\] (default value is '50%')
 * **suffix** `String` Plugin suffix (default value is '.scenemanager')
 
 ### Create scenes instance
