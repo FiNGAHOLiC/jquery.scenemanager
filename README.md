@@ -24,15 +24,15 @@ var scenes = $.scenemanager({
 });
 ```
 
-### Register scene
+### Add scene
 
 ```javascript
-scenes.register({
+scenes.add({
 
 	// scene selector
 	sceneSelector: '#scene1',
 
-	// resister elements using in the scene
+	// register elements using in the scene
 	sceneObject: {
 		$heading: '.heading',
 		$paragraph1: '.paragraph1',

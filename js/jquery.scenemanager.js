@@ -1,8 +1,12 @@
 /*!
  * jquery.scenemanager.js
  *
- * @modified 2013/04/08
- * @requires jQuery 1.7.x or later
+ * @modified  2013/04/08
+ * @requires  jQuery 1.7.x or later
+ * @version   1.0.0
+ * @author    FiNGAHOLiC
+ * @link      https://github.com/FiNGAHOLiC/jquery.scenemanager
+ * @license   The MIT License
  *
  */
 
@@ -133,7 +137,7 @@
 			for(var prop in obj) elems[prop] = $scene.find(obj[prop]);
 			return elems;
 		};
-		_.register = function(setting){
+		_.add = function(setting){
 			var s = setting;
 			var $scene = $(s.sceneSelector);
 			var elems = this.returnSceneElement($scene, s.sceneObject);
