@@ -2,7 +2,7 @@
 	"name": "scenemanager",
 	"title": "jquery scenemanager", 
 	"description": "this is a simple scene manager plugin.",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"keywords": [
 		"scene",
 		"manage",
