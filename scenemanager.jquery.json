@@ -1,0 +1,32 @@
+{
+	"name": "scenemanager",
+	"title": "jquery scenemanager", 
+	"description": "this is a simple scene manager plugin.",
+	"version": "1.0.0",
+	"keywords": [
+		"scene",
+		"manage",
+		"manager",
+		"scroll",
+		"waypoint",
+		"waypoints",
+		"animation",
+		"scenemanager"
+	],
+	"author": {
+		"name": "FiNGAHOLiC",
+		"url": "https://github.com/FiNGAHOLiC"
+	},
+	"licenses": [
+		{
+			"type":"MIT",
+			"url": "http://opensource.org/licenses/MIT"
+		}
+	],
+	"dependencies": {
+		"jquery": ">=1.7"
+	},
+	"docs": "http://fingaholic.github.com/jquery.scenemanager/",
+	"download": "https://github.com/FiNGAHOLiC/jquery.scenemanager/archive/master.zip",
+	"homepage": "https://github.com/FiNGAHOLiC/jquery.scenemanager"
+}
