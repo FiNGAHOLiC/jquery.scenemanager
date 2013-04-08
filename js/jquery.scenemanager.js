@@ -1,9 +1,9 @@
 /*!
  * jquery.scenemanager.js
  *
- * @modified  2013/04/08
+ * @modified  2013/04/09
  * @requires  jQuery 1.7.x or later
- * @version   1.0.1
+ * @version   1.0.2
  * @author    FiNGAHOLiC
  * @link      https://github.com/FiNGAHOLiC/jquery.scenemanager
  * @license   The MIT License
@@ -32,7 +32,7 @@
 	(function(_){
 		_.options = {
 			proximity: 1,
-			startSceneAt: '50%',
+			waypoint: '50%',
 			suffix: '.scenemanager'
 		};
 		_.initialize = function(options){
@@ -56,7 +56,7 @@
 		};
 		_.setTriggerPos = function(){
 			var windowHeight = $window.height();
-			var start = this.options.startSceneAt;
+			var start = this.options.waypoint;
 			var type = $.type(start);
 			this.triggerPosY = (type === 'number')
 				? start
