@@ -17,11 +17,7 @@ http://fingaholic.github.com/jquery.scenemanager/
 ### Create scenes instance
 
 ```javascript
-var scenes = $.scenemanager({
-	proximity: 1,
-	waypoint: '50%',
-	suffix: '.scenemanager'
-});
+var scenes = $.scenemanager();
 ```
 
 ### Add scene
@@ -34,9 +30,12 @@ scenes.add({
 
 	// register elements using in the scene
 	sceneObject: {
-		$heading: '.heading',
-		$paragraph1: '.paragraph1',
-		$paragraph2: '.paragraph2'
+		$title: '.title',
+		$anim1: '.anim1',
+		$anim2: '.anim2',
+		$anim3: '.anim3',
+		$anim4: '.anim4',
+		$anim5: '.anim5'
 	},
 
 	// scene animation
@@ -44,14 +43,18 @@ scenes.add({
 		// $scene: jQuery object with scene
 		// elems: object with registered elements above
 		// $queue: queue
-		elems.$heading.fadeIn(500, function(){
-			elems.$paragraph1.fadeIn(500, function(){
-				elems.$paragraph2.fadeIn(500, function(){
-					// Go to next scene
-					$queue.dequeue();
-				});
+		var anim0 = function(){ elems.$title.fadeOut(500, anim1); };
+		var anim1 = function(){ elems.$anim1.fadeIn(500, anim2); };
+		var anim2 = function(){ elems.$anim2.fadeIn(500, anim3); };
+		var anim3 = function(){ elems.$anim3.fadeIn(500, anim4); };
+		var anim4 = function(){ elems.$anim4.fadeIn(500, anim5); };
+		var anim5 = function(){
+			elems.$anim5.fadeIn(500, function(){
+				// Go to next scene
+				$queue.dequeue();
 			});
-		});
+		};
+		anim0();
 	}
 
 });

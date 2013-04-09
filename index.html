@@ -8,47 +8,76 @@
 		<meta name="description" content="">
 		<title>jquery.scenemanager.js</title>
 		<style>
-			.area-body { width: 600px; margin: 0 auto; }
-			.scene { height: 560px; padding: 20px; }
-			.heading { font-size: 30px; font-weight: bold; display: none; }
-			.paragraph1 { display: none; margin-top: 10px; }
-			.paragraph2 { display: none; margin-top: 10px; }
+			.area-body { width: 600px; margin: 0 auto; text-align: center; }
+			.scene { height: 600px; }
 			#scene1 { background: blue; }
 			#scene2 { background: yellow; }
-			#scene3 { background: red; }
+			#scene3 { background: green; }
 			#scene4 { background: pink; }
 			#scene5 { background: brown; }
+			.title { margin: 0; line-height: 600px; }
+			.anim { display: none; background: white; line-height: 120px; opacity: .5; }
 			.waypoint-line { width: 100%; height: 1px; position: fixed; top: 50%; left: 0; z-index: 1; background: red; }
 			.waypoint-text { position: fixed; top: 50%; left: 0; z-index: 1; color: red; }
+			/* for IE6 */
+			*html .waypoint-line {
+				position: expression('absolute');
+				top: expression((documentElement.scrollTop || document.body.scrollTop) + (document.documentElement.clientHeight * 0.5) + 'px');
+				left: expression((documentElement.scrollLeft || document.body.scrollLeft) + 'px');
+				overflow: hidden;
+				font-size: 0;
+				line-height: 0;
+			}
+			/* for IE6 */
+			*html .waypoint-text {
+				position: expression('absolute');
+				top: expression((documentElement.scrollTop || document.body.scrollTop) + (document.documentElement.clientHeight * 0.5) + 'px');
+				left: expression((documentElement.scrollLeft || document.body.scrollLeft) + 'px');
+			}
 		</style>
 	</head>
 	<body>
 		<div class="area-body">
 			<h1>jquery.scenemanager.js demo</h1>
 			<div id="scene1" class="scene">
-				<div class="heading">Heading 1</div>
-				<div class="paragraph1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
-				<div class="paragraph2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+				<h1 class="title">Scene1</h1>
+				<div class="anim anim1">Scene1-1 animation completed</div>
+				<div class="anim anim2">Scene1-2 animation completed</div>
+				<div class="anim anim3">Scene1-3 animation completed</div>
+				<div class="anim anim4">Scene1-4 animation completed</div>
+				<div class="anim anim5">Scene1-5 animation completed</div>
 			</div>
 			<div id="scene2" class="scene">
-				<div class="heading">Heading 2</div>
-				<div class="paragraph1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
-				<div class="paragraph2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+				<h1 class="title">Scene2</h1>
+				<div class="anim anim1">Scene2-1 animation completed</div>
+				<div class="anim anim2">Scene2-2 animation completed</div>
+				<div class="anim anim3">Scene2-3 animation completed</div>
+				<div class="anim anim4">Scene2-4 animation completed</div>
+				<div class="anim anim5">Scene2-5 animation completed</div>
 			</div>
 			<div id="scene3" class="scene">
-				<div class="heading">Heading 3</div>
-				<div class="paragraph1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
-				<div class="paragraph2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+				<h1 class="title">Scene3</h1>
+				<div class="anim anim1">Scene3-1 animation completed</div>
+				<div class="anim anim2">Scene3-2 animation completed</div>
+				<div class="anim anim3">Scene3-3 animation completed</div>
+				<div class="anim anim4">Scene3-4 animation completed</div>
+				<div class="anim anim5">Scene3-5 animation completed</div>
 			</div>
 			<div id="scene4" class="scene">
-				<div class="heading">Heading 4</div>
-				<div class="paragraph1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
-				<div class="paragraph2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+				<h1 class="title">Scene4</h1>
+				<div class="anim anim1">Scene4-1 animation completed</div>
+				<div class="anim anim2">Scene4-2 animation completed</div>
+				<div class="anim anim3">Scene4-3 animation completed</div>
+				<div class="anim anim4">Scene4-4 animation completed</div>
+				<div class="anim anim5">Scene4-5 animation completed</div>
 			</div>
 			<div id="scene5" class="scene">
-				<div class="heading">Heading 5</div>
-				<div class="paragraph1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
-				<div class="paragraph2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+				<h1 class="title">Scene5</h1>
+				<div class="anim anim1">Scene5-1 animation completed</div>
+				<div class="anim anim2">Scene5-2 animation completed</div>
+				<div class="anim anim3">Scene5-3 animation completed</div>
+				<div class="anim anim4">Scene5-4 animation completed</div>
+				<div class="anim anim5">Scene5-5 animation completed</div>
 			</div>
 		</div>
 		<div class="waypoint-line"></div>
@@ -66,18 +95,25 @@
 				scenes.add({
 					sceneSelector: '#scene1',
 					sceneObject: {
-						$heading: '.heading',
-						$paragraph1: '.paragraph1',
-						$paragraph2: '.paragraph2'
+						$title: '.title',
+						$anim1: '.anim1',
+						$anim2: '.anim2',
+						$anim3: '.anim3',
+						$anim4: '.anim4',
+						$anim5: '.anim5'
 					},
 					sceneFn: function($scene, elems, $queue){
-						elems.$heading.fadeIn(500, function(){
-							elems.$paragraph1.fadeIn(500, function(){
-								elems.$paragraph2.fadeIn(500, function(){
-									$queue.dequeue();
-								});
+						var anim0 = function(){ elems.$title.fadeOut(500, anim1); };
+						var anim1 = function(){ elems.$anim1.fadeIn(500, anim2); };
+						var anim2 = function(){ elems.$anim2.fadeIn(500, anim3); };
+						var anim3 = function(){ elems.$anim3.fadeIn(500, anim4); };
+						var anim4 = function(){ elems.$anim4.fadeIn(500, anim5); };
+						var anim5 = function(){
+							elems.$anim5.fadeIn(500, function(){
+								$queue.dequeue();
 							});
-						});
+						};
+						anim0();
 					}
 				});
 
@@ -85,18 +121,25 @@
 				scenes.add({
 					sceneSelector: '#scene2',
 					sceneObject: {
-						$heading: '.heading',
-						$paragraph1: '.paragraph1',
-						$paragraph2: '.paragraph2'
+						$title: '.title',
+						$anim1: '.anim1',
+						$anim2: '.anim2',
+						$anim3: '.anim3',
+						$anim4: '.anim4',
+						$anim5: '.anim5'
 					},
 					sceneFn: function($scene, elems, $queue){
-						elems.$heading.fadeIn(500, function(){
-							elems.$paragraph1.fadeIn(500, function(){
-								elems.$paragraph2.fadeIn(500, function(){
-									$queue.dequeue();
-								});
+						var anim0 = function(){ elems.$title.fadeOut(500, anim1); };
+						var anim1 = function(){ elems.$anim1.fadeIn(500, anim2); };
+						var anim2 = function(){ elems.$anim2.fadeIn(500, anim3); };
+						var anim3 = function(){ elems.$anim3.fadeIn(500, anim4); };
+						var anim4 = function(){ elems.$anim4.fadeIn(500, anim5); };
+						var anim5 = function(){
+							elems.$anim5.fadeIn(500, function(){
+								$queue.dequeue();
 							});
-						});
+						};
+						anim0();
 					}
 				});
 
@@ -104,18 +147,25 @@
 				scenes.add({
 					sceneSelector: '#scene3',
 					sceneObject: {
-						$heading: '.heading',
-						$paragraph1: '.paragraph1',
-						$paragraph2: '.paragraph2'
+						$title: '.title',
+						$anim1: '.anim1',
+						$anim2: '.anim2',
+						$anim3: '.anim3',
+						$anim4: '.anim4',
+						$anim5: '.anim5'
 					},
 					sceneFn: function($scene, elems, $queue){
-						elems.$heading.fadeIn(500, function(){
-							elems.$paragraph1.fadeIn(500, function(){
-								elems.$paragraph2.fadeIn(500, function(){
-									$queue.dequeue();
-								});
+						var anim0 = function(){ elems.$title.fadeOut(500, anim1); };
+						var anim1 = function(){ elems.$anim1.fadeIn(500, anim2); };
+						var anim2 = function(){ elems.$anim2.fadeIn(500, anim3); };
+						var anim3 = function(){ elems.$anim3.fadeIn(500, anim4); };
+						var anim4 = function(){ elems.$anim4.fadeIn(500, anim5); };
+						var anim5 = function(){
+							elems.$anim5.fadeIn(500, function(){
+								$queue.dequeue();
 							});
-						});
+						};
+						anim0();
 					}
 				});
 
@@ -123,18 +173,25 @@
 				scenes.add({
 					sceneSelector: '#scene4',
 					sceneObject: {
-						$heading: '.heading',
-						$paragraph1: '.paragraph1',
-						$paragraph2: '.paragraph2'
+						$title: '.title',
+						$anim1: '.anim1',
+						$anim2: '.anim2',
+						$anim3: '.anim3',
+						$anim4: '.anim4',
+						$anim5: '.anim5'
 					},
 					sceneFn: function($scene, elems, $queue){
-						elems.$heading.fadeIn(500, function(){
-							elems.$paragraph1.fadeIn(500, function(){
-								elems.$paragraph2.fadeIn(500, function(){
-									$queue.dequeue();
-								});
+						var anim0 = function(){ elems.$title.fadeOut(500, anim1); };
+						var anim1 = function(){ elems.$anim1.fadeIn(500, anim2); };
+						var anim2 = function(){ elems.$anim2.fadeIn(500, anim3); };
+						var anim3 = function(){ elems.$anim3.fadeIn(500, anim4); };
+						var anim4 = function(){ elems.$anim4.fadeIn(500, anim5); };
+						var anim5 = function(){
+							elems.$anim5.fadeIn(500, function(){
+								$queue.dequeue();
 							});
-						});
+						};
+						anim0();
 					}
 				});
 
@@ -142,18 +199,25 @@
 				scenes.add({
 					sceneSelector: '#scene5',
 					sceneObject: {
-						$heading: '.heading',
-						$paragraph1: '.paragraph1',
-						$paragraph2: '.paragraph2'
+						$title: '.title',
+						$anim1: '.anim1',
+						$anim2: '.anim2',
+						$anim3: '.anim3',
+						$anim4: '.anim4',
+						$anim5: '.anim5'
 					},
 					sceneFn: function($scene, elems, $queue){
-						elems.$heading.fadeIn(500, function(){
-							elems.$paragraph1.fadeIn(500, function(){
-								elems.$paragraph2.fadeIn(500, function(){
-									$queue.dequeue();
-								});
+						var anim0 = function(){ elems.$title.fadeOut(500, anim1); };
+						var anim1 = function(){ elems.$anim1.fadeIn(500, anim2); };
+						var anim2 = function(){ elems.$anim2.fadeIn(500, anim3); };
+						var anim3 = function(){ elems.$anim3.fadeIn(500, anim4); };
+						var anim4 = function(){ elems.$anim4.fadeIn(500, anim5); };
+						var anim5 = function(){
+							elems.$anim5.fadeIn(500, function(){
+								$queue.dequeue();
 							});
-						});
+						};
+						anim0();
 					}
 				});
 
