@@ -1,9 +1,9 @@
 /*!
  * jquery.scenemanager.js
  *
- * @modified  2013/04/09
+ * @modified  2013/04/11
  * @requires  jQuery 1.7.x or later
- * @version   1.0.5
+ * @version   1.0.6
  * @author    FiNGAHOLiC
  * @link      https://github.com/FiNGAHOLiC/jquery.scenemanager
  * @license   The MIT License
@@ -97,14 +97,14 @@
 		_.checkQueue = function(){
 			for(var i = 0, l = this.scenes.length; i < l; i++){
 				var scene = this.scenes[i];
-				if(!scene['addQueued']){
+				if(!scene['complete']){
 					if(this.returnCurrentPosY(scene['posY'])){
 						this.addQueue(
 							scene['$scene'],
 							scene['elems'],
 							scene['method']
 						);
-						scene['addQueued'] = true;
+						scene['complete'] = true;
 					};
 				};
 			};
@@ -122,11 +122,11 @@
 			return this;
 		};
 		_.checkQueueLength = function(){
-			var addQueued = 0;
+			var complete = 0;
 			for(var i = 0, l = this.scenes.length; i < l; i++){
-				if(this.scenes[i]['addQueued']) addQueued++;
+				if(this.scenes[i]['complete']) complete++;
 			};
-			if(addQueued === this.scenes.length) this.unbindEvents();
+			if(complete === this.scenes.length) this.unbindEvents();
 			return this;
 		};
 		_.returnScrollTop = function($scene){
@@ -147,7 +147,7 @@
 				elems: elems,
 				method: s.sceneFn,
 				posY: posY,
-				addQueued: false
+				complete: false
 			});
 			this.sortScenes();
 			return this;
