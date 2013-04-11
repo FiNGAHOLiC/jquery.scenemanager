@@ -83,3 +83,7 @@ IE6+ and other new browsers.
 ## License
 
 Licensed under the MIT license.
+
+## Thanks
+
+djot
