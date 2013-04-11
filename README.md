@@ -16,7 +16,7 @@ http://fingaholic.github.com/jquery.scenemanager/
 * **waypoint** `Integer` or `String` How far from the top of the window \[pixels or percentage of the viewport's height\] (default value is '50%')
 * **suffix** `String` Plugin suffix (default value is '.scenemanager')
 
-### queueing function
+### Queueing function
 
 Although there is a possibility that each function would start at the same time when you scroll rapidly, this plugin ensures that **each function runs in sequence** by using jQuery queue() and dequeue().
 
