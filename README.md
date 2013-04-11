@@ -1,7 +1,6 @@
 # jquery.scenemanager.js
 
-jquery.scenemanager.js is a simple scene manager plugin.
-
+jquery.scenemanager.js is a simple scene manager plugin.  
 This plugin makes easy to execute function when the top of element reaches the waypoint (default waypoint is the middle of viewport).
 
 ## Demo

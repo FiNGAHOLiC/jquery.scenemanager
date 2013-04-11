@@ -1,8 +1,8 @@
 {
 	"name": "scenemanager",
 	"title": "jquery scenemanager", 
-	"description": "this is a simple scene manager plugin.",
-	"version": "1.0.7",
+	"description": "this is a simple scene manager plugin.This plugin makes easy to execute function when the top of element reaches the waypoint (default waypoint is the middle of viewport).",
+	"version": "1.0.8",
 	"keywords": [
 		"scene",
 		"manage",
